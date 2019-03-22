@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
-import { ScrollView, Image } from '@tarojs/components'
+import { ScrollView, Image, View } from '@tarojs/components'
 import './index.scss'
 
 export default class Topics extends Component {
@@ -13,11 +13,18 @@ export default class Topics extends Component {
   render() {
     const { topics } = this.props
     return (
-      <ScrollView scrollLeft='0' scrollX className='topic' scrollWithAnimation>
-        {topics.map((item, index) => {
-          return <Image className='topic-item' key={index} src={item.thumb} />
-        })}
-      </ScrollView>
+      <View className='at-row at-row__justify--center'>
+        <ScrollView
+          scrollLeft='0'
+          scrollX
+          className='topic'
+          scrollWithAnimation
+        >
+          {topics.map((item, index) => {
+            return <Image className='topic-item' key={index} src={item.thumb} />
+          })}
+        </ScrollView>
+      </View>
     )
   }
 }

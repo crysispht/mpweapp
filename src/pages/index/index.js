@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text, ScrollView } from '@tarojs/components'
+import { View, ScrollView } from '@tarojs/components'
 import { observer, inject } from '@tarojs/mobx'
 import { AtLoadMore } from 'taro-ui'
 import { getWindowHeight } from '@/utils/style'
@@ -106,7 +106,7 @@ class Index extends Component {
     const homeInfo = this.homeStore.homeInfo
     let articles = this.state.articles
     return (
-      <View className='home'>
+      <View className='home at-col'>
         <ScrollView
           className='at-col at-col__align--center'
           style={{ height: getWindowHeight(false) }}
@@ -117,13 +117,6 @@ class Index extends Component {
           scrollTop='0'
           onScroll={this.onScroll.bind(this)}
         >
-          <View className='at-row at-row__justify--center'>
-            <View className='home-search at-row at-row__justify--center at-row__align--center '>
-              <Text className='at-icon at-icon-search home-search-icon' />
-              <Text className='home-search-text'>搜索</Text>
-            </View>
-          </View>
-
           <Banner list={homeInfo.banner} />
 
           <Topics topics={homeInfo.topic} />
@@ -131,7 +124,6 @@ class Index extends Component {
           <TopLine topLine={homeInfo.top_line} />
 
           <Articles articles={articles} />
-
           {this.state.loadMoreView && this.state.loadMoreAction ? (
             <AtLoadMore
               className='at-row at-row__align--center loadmore'

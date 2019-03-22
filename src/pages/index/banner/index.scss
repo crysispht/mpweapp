@@ -1,12 +1,44 @@
 .banner {
-  width: 750px;
   height: 560px;
+}
+
+.home-search {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: 64px;
+  z-index: 99;
+  width: 660px;
+  height: 48px;
+  line-height: 48px;
+  background: rgba(255, 255, 255, 0.24);
+  border-radius: 20px;
+  &-icon {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    color: rgba(255, 255, 255, 0.71);
+    margin-right: 14px;
+  }
+
+  &-text {
+    width: 45px;
+    height: 48px;
+    line-height: 50px;
+    font-size: 24px;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  &-view {
+    height: 0px;
+  }
 }
 
 .swiperlist {
   height: 560px;
   &-img {
     height: 560px;
-    width: 750px;
+    width: 100%;
   }
 }
